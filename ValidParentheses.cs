@@ -28,6 +28,9 @@ namespace ValidParentheses
                     {
                         stack.Push(c);
                     }
+          	  if (stack.Count == 0) {
+            	    return false;
+            	}
                     else if (c == ')')
                     {
                         if (stack.Peek().ToString() == "(") { stack.Pop(); }
@@ -47,7 +50,9 @@ namespace ValidParentheses
                             return false;
                     }
                 }
-                return true;
+       	    if (stack.Count != 0)
+            	return false;
+            return true;
             }
         }
     
